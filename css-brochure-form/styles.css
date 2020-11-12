@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 635px;
+}
+
+h1 {
+  text-align: center;
+  color: #FF7468;
+  text-transform: uppercase;
+  font-family: 'Brandon Grotesque';
+  letter-spacing: .4rem;
+}
+
+.info {
+  font-family: 'Brandon Grotesque';
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
+.box {
+  width: 600px;
+  height: 40px;
+  border-color: lightgrey;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-width: 1px;
+  font-family: 'Brandon Grotesque';
+  font-style: normal;
+  font-size: 16px;
+}
+
+.hire {
+  font-family: 'Brandon Grotesque';
+  font-style: normal;
+  font-size: 16px;
+}
+
+.sub {
+  background-color: #FF7468;
+  color: white;
+  border-radius: 20px;
+  width: 100px;
+  height: 40px;
+  font-family: 'Brandon Grotesque';
+  font-style: normal;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.button {
+  text-align: right;
+}
+
+::placeholder {
+  font-family: 'Brandon Grotesque';
+  font-style: normal;
+  font-size: 16px;
+}
