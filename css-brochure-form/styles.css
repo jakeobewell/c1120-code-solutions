@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  width: 635px;
 }
 
 h1 {
@@ -19,6 +20,7 @@ h1 {
   font-style: normal;
   font-weight: 500;
   text-transform: uppercase;
+  padding-left: 15px;
 }
 
 .box {
@@ -41,7 +43,6 @@ h1 {
 }
 
 .sub {
-  margin-left: 500px;
   background-color: #FF7468;
   color: white;
   border-radius: 20px;
@@ -52,6 +53,10 @@ h1 {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.button {
+  text-align: right;
 }
 
 ::placeholder {
