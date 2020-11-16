@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 1200px;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.split {
+  display: flex;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  color: white;
+  margin-top: 70px;
+  line-height: 2em;
+
+}
+
+.sixth-row {
+  background-color: #525351;
+  height: 320px;
+}
+
+.bottom-info-left {
+  margin: 80px 50px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  color: white;
+}
+
+img {
+  width: 25%;
+}
+
+.first-row {
+  height: 100px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 200px;
+  margin-right: 50px;
+  align-items: center;
+}
+
+.contact {
+  background-color: #294464;
+  border-radius: 2px;
+  border: 0;
+  color: white;
+  width: 80px;
+  height: 35px;
+}
+
+.background-image {
+  background:linear-gradient(rgba(100, 100, 100, 0.5), rgba(100, 100, 100, 0.5)), url(images/hero.jpg);
+  background-size: 100%;
+  margin: 10px 50px;
+  width: 1100px;
+  height: 580px;
+}
+
+.second-row {
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+  position: relative;
+  margin: 50px 70px;
+}
+
+.second-row > p {
+  line-height: 1.7em;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.get-started {
+  background-color:  #294464;
+  border-radius: 4px;
+  border: 0;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.canvas-top-image-container {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+h2 {
+  font-family: 'Tiempos Headline';
+  font-weight: 300;
+   color: #6d6c6c;
+}
+
+.third-row {
+  color: #6d6c6c;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.fourth-row {
+  color: #6d6c6c;
+  text-align: center;
+  line-height: 2.5em;
+  margin-bottom: 50px;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.fifth-row {
+  color:  #6d6c6c;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 50px;
+}
+
+.bottom-button {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.footer > a {
+  margin-right: 30px;
+}
+
+.footer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Tiempos Headline';
+  color: grey;
+}
+
+.column-half > a {
+  color: white;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+}
