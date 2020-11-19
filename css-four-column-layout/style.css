@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: barlow;
+}
+
+.row {
+  display: flex;
+  margin-left: 180px;
+  margin-right: 180px;
+  width: 1600px;
+}
+
+.column-full {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.column-one-fourth {
+  flex-basis: 25%;
+  text-align: center;
+
+
+}
+
+.large-image-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.small-image-container {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-style: extra-bold;
+}
+
+p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
