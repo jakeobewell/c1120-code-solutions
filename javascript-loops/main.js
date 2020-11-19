@@ -40,14 +40,14 @@ function repeatWord(word, times) {
 }
 
 function logEachCharacter(string) {
-  for (var i=0; i < string.length; i++) {
+  for (var i = 0; i < string.length; i++) {
     console.log(string[i]);
   }
 }
 
 function doubleAll(numbers) {
   var doubled = [];
-  for (i = 0; i < numbers.length; i++) {
+  for (var i = 0; i < numbers.length; i++) {
    doubled.push(numbers[i] * 2);
   }
   return doubled;
