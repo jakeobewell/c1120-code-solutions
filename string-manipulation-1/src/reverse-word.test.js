@@ -4,7 +4,7 @@ describe('reverseWord(word)', function () {
 
   beforeEach(function () {
     expect(reverseWord).to.be.a('function');
-    banMethods(reverseWord, 'split', 'from', '..');
+    banMethods(reverseWord, 'split', 'from');
   });
 
   it('returns "oof" for "foo"', function () {
