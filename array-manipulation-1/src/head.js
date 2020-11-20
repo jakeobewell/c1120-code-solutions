@@ -1,5 +1,5 @@
 /* exported head */
 function head(array) {
-  var first = array[0];
-  return first;
+  var firstIndex = array[0];
+  return firstIndex;
 }
