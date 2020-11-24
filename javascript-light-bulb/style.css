@@ -1,0 +1,31 @@
+body {
+  background-color: white;
+}
+
+.background {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbulb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.background.on {
+  background-color: white;
+}
+.lightbulb.on {
+  background-color: khaki;
+}
+
+.background.off {
+  background-color: black;
+}
+
+.lightbulb.off {
+  background-color: #252525;
+}
