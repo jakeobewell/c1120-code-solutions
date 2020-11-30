@@ -9,6 +9,7 @@ addEventListener('keydown', function (event) {
     letters[i + 1].className = 'current-letter';
     i += 1;
   }
+
   else {
     letters[i].className = 'wrong';
     }
