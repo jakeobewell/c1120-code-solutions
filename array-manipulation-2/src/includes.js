@@ -1,5 +1,11 @@
 /* exported includes */
 function includes(array, value) {
 
-  for ()
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === value) {
+      return true;
+      break;
+    }
+  }
+  return false;
 }
