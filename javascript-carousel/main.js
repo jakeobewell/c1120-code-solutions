@@ -25,6 +25,9 @@ function changeRight() {
   circles[position - 1].className = 'far fa-circle';
   currentImage.setAttribute('src', images[position]);
   }
+  clearInterval(timer);
+  timer = setInterval(changeRight, 3000);
+
 }
 
 function changeLeft() {
@@ -40,6 +43,8 @@ function changeLeft() {
   circles[position + 1].className = 'far fa-circle';
   currentImage.setAttribute('src', images[position]);
   }
+  clearInterval(timer);
+  timer = setInterval(changeRight, 3000);
 }
 
 function changePosition(event) {
@@ -53,6 +58,8 @@ function changePosition(event) {
     else {
       circles[i].className = 'far fa-circle';
     }
+    clearInterval(timer);
+    timer = setInterval(changeRight, 3000);
   }
 }
 
@@ -60,4 +67,4 @@ circleContainer.addEventListener('click', changePosition);
 rightArrow.addEventListener('click', changeRight);
 leftArrow.addEventListener('click', changeLeft);
 
-setInterval(changeRight, 3000);
+var timer = setInterval(changeRight, 3000);
