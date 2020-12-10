@@ -1,14 +1,18 @@
 /* exported chunk */
 function chunk(array, size) {
   var arr = [];
-  if (array.length < count) {
-    return array;
-  }
-  for (var i = 0; i < array.length; i += size) {
-    for (var x = 0; x < size; x++) {
-      var _chunk = [];
-      _chunk.push
+  var _chunk = [];
+  var chunkSize = size;
 
+  for (i = 0; i < array.length; chunkSize += size) {
+    if (chunkSize > array.length) {
+      chunkSize = array.length;
     }
+    for (i; i < chunkSize; i++) {
+      _chunk.push(array[i]);
+      }
+    arr.push(_chunk);
+    _chunk = [];
   }
+  return arr;
 }
