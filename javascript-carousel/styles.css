@@ -1,0 +1,37 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  width: 800px;
+}
+
+.col-one-fourth {
+  flex-basis: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-one-half {
+  flex-basis: 50%;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container > i {
+  margin-left: 20px;
+}
+
+.col-one-fourth > i {
+  font-size: 5em;
+}
