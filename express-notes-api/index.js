@@ -102,6 +102,49 @@ app.delete('/api/notes/:id', (req, res) => {
   }
 })
 
+app.put('/api/notes/:id', (req, res) => {
+  const fs = require('fs');
+  const datajson = require('./data.json');
+  const noteId = req.params.id;
+  const originalNote = datajson.notes[noteId];
+  const newNote = req.body;
+  newNote.id = parseInt(noteId);
+
+  if (`${parseInt(noteId)}` === 'NaN' || parseInt(noteId) < 1) {
+    const errOne = {
+      'error': 'id must be a positive integer'
+    }
+    res.status(400).json(errOne);
+  }
+
+  if (newNote.content === undefined) {
+    const errTwo = {
+      'error': 'conent is a required field'
+    }
+    res.status(400).json(errTwo);
+  }
+
+  if (originalNote === undefined) {
+    const errThree = {
+      'error': `cannot find note with id ${noteId}`
+    }
+    res.status(404).json(errThree);
+  }
+
+  else {
+    datajson.notes[noteId] = newNote;
+    fs.writeFile('data.json', JSON.stringify(datajson, null, 2), 'utf8', (err) => {
+      if (err) {
+        const errFour = {
+          'error': 'An unexpected error occured.'
+        }
+        res.status(500).json(errFour);
+      };
+      res.status(200).json(newNote);
+    })
+  }
+
+})
 
 app.listen(3000, function () {
   console.log('Listening on port 3000!');
