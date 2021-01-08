@@ -1,15 +1,13 @@
 const express = require('express');
+const datajson = require('./data.json');
+const fs = require('fs');
 const app = express();
-
-
-
 const jsonMiddleware = express.json();
 
 app.use(jsonMiddleware);
 
 app.get('/api/notes', (req, res) => {
   const notesArr = [];
-  const datajson = require('./data.json');
   const notes = datajson.notes
   for (const id in notes) {
     notesArr.push(notes[id]);
@@ -18,11 +16,10 @@ app.get('/api/notes', (req, res) => {
 })
 
 app.get('/api/notes/:id', (req, res) => {
-  const datajson = require('./data.json');
   const noteId = req.params.id
   const notes = datajson.notes
   const note = notes[noteId];
-  if (`${parseInt(noteId)}` === 'NaN' || parseInt(noteId) < 1) {
+  if (Number.isInteger(parseInt(noteId)) === false || parseInt(noteId) < 1) {
     const err = {
       'error': 'id must be a positive integer'
     }
@@ -40,8 +37,6 @@ app.get('/api/notes/:id', (req, res) => {
 })
 
 app.post('/api/notes', (req, res) => {
-  const fs = require('fs');
-  const datajson = require('./data.json');
   const note = req.body
   const noteId = datajson.nextId;
   note.id = noteId;
@@ -50,7 +45,7 @@ app.post('/api/notes', (req, res) => {
 
   if (note.content === undefined) {
     const errOne = {
-      'error': 'conent is a required field'
+      'error': 'content is a required field'
     }
     res.status(400).json(errOne);
   }
@@ -69,13 +64,10 @@ app.post('/api/notes', (req, res) => {
 })
 
 app.delete('/api/notes/:id', (req, res) => {
-  const fs = require('fs');
-  const datajson = require('./data.json');
   const noteId = req.params.id;
   const note = datajson.notes[noteId];
-  delete datajson.notes[noteId];
 
-  if (`${parseInt(noteId)}` === 'NaN' || parseInt(noteId) < 1) {
+  if (Number.isInteger(parseInt(noteId)) === false || parseInt(noteId) < 1) {
     const errOne = {
       'error': 'id must be a positive integer'
     }
@@ -90,6 +82,7 @@ app.delete('/api/notes/:id', (req, res) => {
   }
 
   else {
+    delete datajson.notes[noteId];
     fs.writeFile('data.json', JSON.stringify(datajson, null, 2), 'utf8', (err) => {
       if (err) {
         const errThree = {
@@ -103,14 +96,12 @@ app.delete('/api/notes/:id', (req, res) => {
 })
 
 app.put('/api/notes/:id', (req, res) => {
-  const fs = require('fs');
-  const datajson = require('./data.json');
   const noteId = req.params.id;
   const originalNote = datajson.notes[noteId];
   const newNote = req.body;
   newNote.id = parseInt(noteId);
 
-  if (`${parseInt(noteId)}` === 'NaN' || parseInt(noteId) < 1) {
+  if (Number.isInteger(parseInt(noteId)) === false || parseInt(noteId) < 1) {
     const errOne = {
       'error': 'id must be a positive integer'
     }
@@ -119,7 +110,7 @@ app.put('/api/notes/:id', (req, res) => {
 
   if (newNote.content === undefined) {
     const errTwo = {
-      'error': 'conent is a required field'
+      'error': 'content is a required field'
     }
     res.status(400).json(errTwo);
   }
