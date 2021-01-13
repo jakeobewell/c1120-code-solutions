@@ -1,6 +1,7 @@
-select "customers"."firstName" as "Customer",
+select "customers"."firstName",
+"customers"."lastName",
 sum("payments"."amount") as "Total Paid"
 from "customers"
 join "payments" using ("customerId")
-group by "customers"."firstName"
+group by "customers"."customerId"
 order by "Total Paid" desc
