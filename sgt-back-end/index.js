@@ -43,6 +43,7 @@ app.post('/api/grades', (req, res) => {
   const sql = `
   insert into "grades" ("name", "course", "score")
   values ($1, $2, $3)
+  returning *
   `;
 
   const params = [grade.name, grade.course, grade.score];
@@ -115,7 +116,25 @@ app.delete('/api/grades/:gradeId', (req, res) => {
   const sql = `
   delete from "grades"
   where "gradeId" = $1
+  returning *
   `;
+
+  const params = [gradeId];
+
+  db.query(sql, params)
+  .then(result => {
+    const deletedGrade = result.rows[0];
+    if (!deletedGrade) {
+      res.status(404).json({ 'error': `Cannot find grade with gradeId ${gradeId}` })
+    }
+    res.status(204).json(deletedGrade);
+  })
+  .catch(err => {
+     console.error(err);
+     res.status(500).json({
+      'error': 'An unexpected error occurred'
+    });
+  })
 })
 
 app.listen(3000, function () {
