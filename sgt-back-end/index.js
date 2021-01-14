@@ -31,8 +31,7 @@ app.get('/api/grades', (req, res) => {
 app.post('/api/grades', (req, res) => {
   const grade = req.body;
 
-  if (grade.name === undefined || grade.score === undefined ||
-    grade.course === undefined) {
+  if (!grade.name || !grade.score || !grade.course) {
       res.status(400).json({'error': 'name, course, and score are required fields'})
     }
 
@@ -64,8 +63,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
   const gradeId = parseInt(req.params.gradeId);
   const grade = req.body;
 
-  if (grade.name === undefined || grade.score === undefined ||
-    grade.course === undefined) {
+  if (!grade.name || !grade.score|| !grade.course) {
     res.status(400).json({ 'error': 'name, course, and score are required fields' })
   }
 
@@ -73,7 +71,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
     res.status(400).json({ 'error': 'score must be a number between 0 and 100' })
   }
 
-  if (Number.isInteger(parseInt(gradeId)) === false || parseInt(gradeId) < 1) {
+  if (Number.isInteger(gradeId) === false || gradeId < 1) {
     res.status(400).json({'error': 'gradeId must be a positive integer'})
   }
 
@@ -109,7 +107,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
 app.delete('/api/grades/:gradeId', (req, res) => {
   const gradeId = parseInt(req.params.gradeId);
 
-  if (Number.isInteger(parseInt(gradeId)) === false || parseInt(gradeId) < 1) {
+  if (Number.isInteger(gradeId) === false || gradeId < 1) {
     res.status(400).json({ 'error': 'gradeId must be a positive integer' })
   }
 
@@ -127,7 +125,9 @@ app.delete('/api/grades/:gradeId', (req, res) => {
     if (!deletedGrade) {
       res.status(404).json({ 'error': `Cannot find grade with gradeId ${gradeId}` })
     }
-    res.status(204).json(deletedGrade);
+    else{
+    res.sendStatus(204);
+    }
   })
   .catch(err => {
      console.error(err);
