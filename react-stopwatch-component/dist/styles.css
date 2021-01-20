@@ -1,0 +1,27 @@
+span {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
+  border: solid black 4px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.center {
+  width: 208px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
