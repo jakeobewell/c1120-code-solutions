@@ -1,0 +1,54 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+span {
+  margin-left: 5px;
+  margin-top: 3px;
+}
+.switch-off {
+  height: 20px;
+  width: 40px;
+  border: solid black 1px;
+  background-color: grey;
+  border-radius: 20px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.switch-on {
+  height: 20px;
+  width: 40px;
+  border: solid black 1px;
+  background-color: rgb(21, 110, 21);
+  border-radius: 20px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.switch-button-off {
+  height: 18px;
+  width: 18px;
+  border: solid black 1px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.switch-button-on {
+  height: 18px;
+  width: 18px;
+  border: solid black 1px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
