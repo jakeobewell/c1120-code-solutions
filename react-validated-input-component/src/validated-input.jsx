@@ -15,34 +15,26 @@ export default class PasswordForm extends React.Component {
 
 
   render() {
+    let message = null;
+    let icon = 'fa fa-times ex';
+    const pLength = this.state.password.length;
     if (this.state.password === '') {
-      return (
-        <form>
-          <label htmlFor="password">Password</label>
-          <input id="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
-            <i className="fa fa-times ex"></i>
-            <p>A password is required.</p>
-        </form>
-      );
+      message = 'A password is required.';
     }
-    if (this.state.password.length < 8) {
-      return (
-        <form>
-          <label htmlFor="password">Password</label>
-          <input id="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
-          <i className="fa fa-times ex"></i>
-          <p>Your password is too short.</p>
-        </form>
-      );
+    if (pLength > 0 && pLength < 8) {
+      message = 'Your password is too short.'
     }
-    if (this.state.password.length >= 8) {
-      return (
-        <form>
-          <label htmlFor="password">Password</label>
-          <input id="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
-          <i className="fa fa-check check"></i>
-        </form>
-      );
+    if (pLength >= 8) {
+      message = '';
+      icon = 'fa fa-check check';
     }
+    return (
+      <form>
+        <label htmlFor="password">Password</label>
+        <input id="password" type="password" value={this.state.password} onChange={this.handleChange}></input>
+        <i className={icon}></i>
+        <p>{message}</p>
+      </form>
+    );
   }
 }
