@@ -1,0 +1,22 @@
+
+p {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 2px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.check {
+  color: green;
+  margin-left: 5px;
+}
+
+.ex {
+  color: red;
+  margin-left: 5px;
+}
