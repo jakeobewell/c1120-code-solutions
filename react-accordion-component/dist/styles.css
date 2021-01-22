@@ -1,0 +1,28 @@
+.container {
+  width: 250px;
+}
+
+.hidden {
+  display: none;
+}
+
+h3 {
+  background-color: rgb(212, 212, 212);
+  border: solid black 2px;
+  font-family: 'Lucida sans';
+  font-size: 1em;
+  padding: 5px;
+  margin: 0
+}
+
+h3:hover {
+  cursor: pointer;
+}
+
+p {
+  padding: 3px;
+  border: solid black 2px;
+  margin: 0;
+  font-family: 'Lucida sans';
+  font-size: 0.9em;
+}
