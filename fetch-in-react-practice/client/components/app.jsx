@@ -46,7 +46,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const currentTodos = this.state.todos;
+        const currentTodos = [...this.state.todos];
         currentTodos.push(data);
         this.setState({ todos: currentTodos });
       });
@@ -67,7 +67,7 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const todoList = this.state.todos;
+    const todoList = [...this.state.todos];
     let todoIndex = null;
     todoList.map(todo => {
       if (todo.todoId === todoId) {
@@ -89,7 +89,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const currentTodos = this.state.todos;
+        const currentTodos = [...this.state.todos];
         currentTodos[todoIndex] = data;
         this.setState({ todos: currentTodos });
       });
