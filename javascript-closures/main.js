@@ -1,6 +1,6 @@
 function graduate(credential) {
   return function (fullName) {
-    console.log(`${fullName}, ${credential}`);
+    return (`${fullName}, ${credential}`);
   };
 }
 
