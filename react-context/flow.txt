@@ -1,0 +1,33 @@
+	User can sign up - When the page is visited for the first time index.jsx uses ReactDOM 
+to render App, which is imported from app.jsx. Within app.jsx as soon as the component mounts, 
+there is a check to see if the user has a token. If the user has a token, the user state is 
+assigned the value of the token and the isAuthorizing state is set to false. Then app.jsx will 
+render the Navbar and PageContainer with an AppContext.Provider. Depending on the state, different 
+pages will be rendered by pageContainer. In this case since the user did not have a token, the 
+auth.jsx page. Within the auth.jsx page there is a welcome message that is determined by the 
+path which is in the route state. The Authpage will then render the Authform in which the user can
+input a Username and Password. When the user submits the data, auth-form uses fetch request to 
+submit the data to the server. The server would then receive the request and check if the request 
+has a valid body. If it does, the provided password is then hashed and queries the database to 
+insert the username and hashed password. The data is then sent back to the client.
+
+	User can sign in - Once the user is at the auth page. The user would click the sign in 
+button if not already on the sign in hash. The sign in button will change the route state and render
+the sign in form. The user inputs username and password data and submits. Authform will use a fetch 
+to send a request to the server. The server will fist check to see if a username and password are
+provided in the request body. After that the server will query the database for the userId and
+the hashed password for the provided username. If the username is valid, the server will be 
+provided with the data for the user. The server will then check if the password matches stored
+password. If so the user data will be sent back to the client with a token. The client will then 
+check for user data and a token and then run handleSignIn. Handle sign in will store the token in 
+local storage and set the user state to the user data in the response. The page will then be rendered,
+now with a provided token which will pass the initial token check. The home page will then be rendered.
+
+	User can stay signed in - During the sign in feature the user is provided with a token.
+That token is stored in local storage. Upon return to the app page, as soon as the app mounts, 
+ the user state is assigned data from the decoded token. This will render the page again at the home
+page since the user has the token data.
+
+	User can sign out. When the user clicks the sign out button, the handleSignOut will be called.
+The handleSignOut method will remove the user data and token from local storage. The user state will then
+be set to null which will render the sign up page. 
